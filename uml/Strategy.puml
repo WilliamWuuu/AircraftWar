@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ShootMode {
+    + {abstract} shoot(): List<BaseBullet>
+}
+
+class StraightMode {
+    + {abstract} shoot(): List<BaseBullet>
+}
+
+class ThreeWayMode {
+    + {abstract} shoot(): List<BaseBullet>
+}
+
+class RingMode {
+    + {abstract} shoot(): List<BaseBullet>
+}
+
+class HeroAircraft
+class EliteEnemy
+class ElitePlusEnemy
+
+HeroAircraft <|-- ShootMode
+EliteEnemy <|-- ShootMode
+ElitePlusEnemy <|-- ShootMode
+Boss <|-- ShootMode
+
+ShootMode <|.. StraightMode
+ShootMode <|.. ThreeWayMode
+ShootMode <|.. RingMode
+
+
+@enduml

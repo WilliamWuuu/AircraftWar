@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class BaseEnemy {
+    + getSupply()
+}
+class EliteEnemy {
+    + getSupply()
+}
+class MobEnemy {
+    + genSupply()
+}
+
+interface EnemyFactory {
+    + createEnemy()
+}
+class EliteEnemyFactory {
+    + createEnemy()
+}
+class MobEnemyFactory {
+    + createEnemy()
+}
+
+BaseEnemy <|-- EliteEnemy
+BaseEnemy <|-- MobEnemy
+
+EnemyFactory <|-- EliteEnemyFactory
+EliteEnemy <|-- EliteEnemyFactory
+EnemyFactory <|-- MobEnemyFactory
+MobEnemy <|-- MobEnemyFactory
+BaseEnemy <|-- EnemyFactory
+
+abstract class BaseSupply {
+    + activate()
+}
+class BombSupply {
+    + activate()
+}
+class BulletSupply {
+    + activate()
+}
+class BloodSupply {
+    + activate()
+}
+
+abstract class SupplyFactory {
+    + createSupply()
+}
+class BombFactory {
+    + createSupply()
+}
+class BulletFactory {
+    + createSupply()
+}
+class BloodFactory {
+    + createSupply()
+}
+
+BaseSupply <|-- BulletSupply
+BaseSupply <|-- BombSupply
+BaseSupply <|-- BloodSupply
+
+SupplyFactory <|-- BloodFactory
+SupplyFactory <|-- BulletFactory
+SupplyFactory <|-- BombFactory
+
+BulletSupply <|-- BulletFactory
+BloodSupply <|-- BloodFactory
+BombSupply <|-- BombFactory
+
+BaseSupply <|-- SupplyFactory
+
+@enduml

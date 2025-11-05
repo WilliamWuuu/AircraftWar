@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ScoreInterface {
+    + {abstract} getScoreRecords(): List<ScoreRecord>;
+    + {abstract} addScoreRecord(ScoreRecord score);
+}
+
+class ScoreManager {
+    + {abstract} getScoreRecords(): List<ScoreRecord>;
+    + {abstract} addScoreRecord(ScoreRecord score);
+}
+
+class ScoreRecord {
+    + Score: int
+    + Name: String
+    + Time: LocalDateTime
+}
+
+ScoreInterface <|.. ScoreManager
+ScoreRecord <|-- ScoreManager
+
+@enduml

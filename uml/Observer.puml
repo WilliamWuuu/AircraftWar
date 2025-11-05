@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface BombObserver {
+    + {abstract} OnBombActivated()
+}
+
+class EnemyBullet {
+    + OnBombActivated()
+}
+
+class ElitePlusEnemy {
+    + OnBombActivated()
+}
+
+class EliteEnemy {
+    + OnBombActivated()
+}
+
+class MobEnemy {
+    + OnBombActivated()
+}
+
+BombObserver <|.. MobEnemy
+BombObserver <|.. ElitePlusEnemy
+BombObserver <|.. EnemyBullet
+BombObserver <|.. EliteEnemy
+
+
+
+class BombSupply {
+    - {static} observers: List<BombObserver>
+    - {static} AddObserver(BombObserver observer)
+    - {static} removeObserver(BombObserver observer)
+    - {static} activate(HeroAircraft hero)
+}
+
+class Game {
+    - Props: List<BaseSupply>
+}
+
+BombObserver <|-- BombSupply
+BombSupply <|-- Game
+MobEnemy <|.. Game
+EliteEnemy <|.. Game
+ElitePlusEnemy <|.. Game
+EnemyBullet <|..Game
+
+@enduml

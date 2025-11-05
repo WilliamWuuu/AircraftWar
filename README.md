@@ -118,6 +118,3 @@ If you see image/audio not found errors, make sure your working directory is the
 - Class not found for `org.apache.commons.lang3.concurrent.BasicThreadFactory`
   - Make sure `lib/commons-lang3-3.8.1.jar` is on your runtime classpath
 
-
-## Credits
-

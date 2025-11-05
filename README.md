@@ -1,8 +1,11 @@
-# AircraftWar
-
 <img src="https://skillicons.dev/icons?i=java,swing" />
 
-A demo of a plane shooting game based on Java Swing.
+# AircraftWar
+🎮 A demo of a plane shooting game based on Java Swing.
+
+🎓 The lab project of "[COMP3059] Introduction to Object-oriented Software Construction" at HITSZ. 
+
+👏 Original skeleton by [dustphantom](https://github.com/duskphantom).
 
 ## Highlights
 - Three difficulties: Easy, Normal, Hard
@@ -117,4 +120,4 @@ If you see image/audio not found errors, make sure your working directory is the
 
 
 ## Credits
-Original skeleton by [dustphantom](https://github.com/duskphantom).
+
